@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MeetingsModelStoreContainer" CdmEntityContainer="MeetingsEntities">
+    <EntitySetMapping Name="Meets">
+      <EntityTypeMapping TypeName="MeetingsModel.Meet">
+        <MappingFragment StoreEntitySet="Meet">
+          <ScalarProperty Name="Id_meet" ColumnName="Id_meet" />
+          <ScalarProperty Name="Place" ColumnName="Place" />
+          <ScalarProperty Name="Descript" ColumnName="Descript" />
+          <ScalarProperty Name="DateEvent" ColumnName="DateEvent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Meet_participant">
+      <EntityTypeMapping TypeName="MeetingsModel.Meet_participant">
+        <MappingFragment StoreEntitySet="Meet_participant">
+          <ScalarProperty Name="id_Meet_participant" ColumnName="id_Meet_participant" />
+          <ScalarProperty Name="Id_participant" ColumnName="Id_participant" />
+          <ScalarProperty Name="Id_meet" ColumnName="Id_meet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Participants">
+      <EntityTypeMapping TypeName="MeetingsModel.Participant">
+        <MappingFragment StoreEntitySet="Participant">
+          <ScalarProperty Name="Id_participant" ColumnName="Id_participant" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="SureName" ColumnName="SureName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

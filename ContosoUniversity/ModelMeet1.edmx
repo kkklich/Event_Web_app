@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MeetingsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Meet">
+          <Key>
+            <PropertyRef Name="Id_meet" />
+          </Key>
+          <Property Name="Id_meet" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Place" Type="varchar" MaxLength="100" />
+          <Property Name="Descript" Type="varchar" MaxLength="100" />
+          <Property Name="DateEvent" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Meet_participant">
+          <Key>
+            <PropertyRef Name="id_Meet_participant" />
+          </Key>
+          <Property Name="id_Meet_participant" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_participant" Type="int" Nullable="false" />
+          <Property Name="Id_meet" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Participant">
+          <Key>
+            <PropertyRef Name="Id_participant" />
+          </Key>
+          <Property Name="Id_participant" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="SureName" Type="varchar" MaxLength="100" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Meet_part__Id_me__5535A963">
+          <End Role="Meet" Type="Self.Meet" Multiplicity="1" />
+          <End Role="Meet_participant" Type="Self.Meet_participant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Meet">
+              <PropertyRef Name="Id_meet" />
+            </Principal>
+            <Dependent Role="Meet_participant">
+              <PropertyRef Name="Id_meet" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Meet_part__Id_pa__5441852A">
+          <End Role="Participant" Type="Self.Participant" Multiplicity="1" />
+          <End Role="Meet_participant" Type="Self.Meet_participant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Participant">
+              <PropertyRef Name="Id_participant" />
+            </Principal>
+            <Dependent Role="Meet_participant">
+              <PropertyRef Name="Id_participant" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MeetingsModelStoreContainer">
+          <EntitySet Name="Meet" EntityType="Self.Meet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Meet_participant" EntityType="Self.Meet_participant" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Participant" EntityType="Self.Participant" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Meet_part__Id_me__5535A963" Association="Self.FK__Meet_part__Id_me__5535A963">
+            <End Role="Meet" EntitySet="Meet" />
+            <End Role="Meet_participant" EntitySet="Meet_participant" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Meet_part__Id_pa__5441852A" Association="Self.FK__Meet_part__Id_pa__5441852A">
+            <End Role="Participant" EntitySet="Participant" />
+            <End Role="Meet_participant" EntitySet="Meet_participant" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MeetingsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Meet">
+          <Key>
+            <PropertyRef Name="Id_meet" />
+          </Key>
+          <Property Name="Id_meet" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Place" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Descript" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DateEvent" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Meet_participant" Relationship="Self.FK__Meet_part__Id_me__5535A963" FromRole="Meet" ToRole="Meet_participant" />
+        </EntityType>
+        <EntityType Name="Meet_participant">
+          <Key>
+            <PropertyRef Name="id_Meet_participant" />
+          </Key>
+          <Property Name="id_Meet_participant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_participant" Type="Int32" Nullable="false" />
+          <Property Name="Id_meet" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Meet" Relationship="Self.FK__Meet_part__Id_me__5535A963" FromRole="Meet_participant" ToRole="Meet" />
+          <NavigationProperty Name="Participant" Relationship="Self.FK__Meet_part__Id_pa__5441852A" FromRole="Meet_participant" ToRole="Participant" />
+        </EntityType>
+        <EntityType Name="Participant">
+          <Key>
+            <PropertyRef Name="Id_participant" />
+          </Key>
+          <Property Name="Id_participant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SureName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Meet_participant" Relationship="Self.FK__Meet_part__Id_pa__5441852A" FromRole="Participant" ToRole="Meet_participant" />
+        </EntityType>
+        <Association Name="FK__Meet_part__Id_me__5535A963">
+          <End Role="Meet" Type="Self.Meet" Multiplicity="1" />
+          <End Role="Meet_participant" Type="Self.Meet_participant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Meet">
+              <PropertyRef Name="Id_meet" />
+            </Principal>
+            <Dependent Role="Meet_participant">
+              <PropertyRef Name="Id_meet" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Meet_part__Id_pa__5441852A">
+          <End Role="Participant" Type="Self.Participant" Multiplicity="1" />
+          <End Role="Meet_participant" Type="Self.Meet_participant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Participant">
+              <PropertyRef Name="Id_participant" />
+            </Principal>
+            <Dependent Role="Meet_participant">
+              <PropertyRef Name="Id_participant" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MeetingsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Meets" EntityType="Self.Meet" />
+          <EntitySet Name="Meet_participant" EntityType="Self.Meet_participant" />
+          <EntitySet Name="Participants" EntityType="Self.Participant" />
+          <AssociationSet Name="FK__Meet_part__Id_me__5535A963" Association="Self.FK__Meet_part__Id_me__5535A963">
+            <End Role="Meet" EntitySet="Meets" />
+            <End Role="Meet_participant" EntitySet="Meet_participant" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Meet_part__Id_pa__5441852A" Association="Self.FK__Meet_part__Id_pa__5441852A">
+            <End Role="Participant" EntitySet="Participants" />
+            <End Role="Meet_participant" EntitySet="Meet_participant" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MeetingsModelStoreContainer" CdmEntityContainer="MeetingsEntities">
+          <EntitySetMapping Name="Meets">
+            <EntityTypeMapping TypeName="MeetingsModel.Meet">
+              <MappingFragment StoreEntitySet="Meet">
+                <ScalarProperty Name="Id_meet" ColumnName="Id_meet" />
+                <ScalarProperty Name="Place" ColumnName="Place" />
+                <ScalarProperty Name="Descript" ColumnName="Descript" />
+                <ScalarProperty Name="DateEvent" ColumnName="DateEvent" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Meet_participant">
+            <EntityTypeMapping TypeName="MeetingsModel.Meet_participant">
+              <MappingFragment StoreEntitySet="Meet_participant">
+                <ScalarProperty Name="id_Meet_participant" ColumnName="id_Meet_participant" />
+                <ScalarProperty Name="Id_participant" ColumnName="Id_participant" />
+                <ScalarProperty Name="Id_meet" ColumnName="Id_meet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Participants">
+            <EntityTypeMapping TypeName="MeetingsModel.Participant">
+              <MappingFragment StoreEntitySet="Participant">
+                <ScalarProperty Name="Id_participant" ColumnName="Id_participant" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="SureName" ColumnName="SureName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

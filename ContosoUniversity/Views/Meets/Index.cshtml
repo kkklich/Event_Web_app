@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ContosoUniversity.Meet>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista wydarzeń</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Place)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descript)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateEvent)
+        </th>
+        <th>
+            <a>Liczba uczestników</a>
+           
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Place)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Descript)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DateEvent)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DateEvent)
+    </td>
+    
+    <td>
+        @Html.ActionLink("Edytuj", "Edit", new { id = item.Id_meet }) |
+        @Html.ActionLink("Wyświetl uczestników", "Details", new { id = item.Id_meet }) |
+        @Html.ActionLink("Usuń", "Delete", new { id = item.Id_meet })
+    </td>
+</tr>
+}
+
+</table>
