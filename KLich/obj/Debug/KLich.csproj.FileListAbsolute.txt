@@ -1,0 +1,107 @@
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\bin\KLich.dll.config
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\bin\KLich.dll
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\bin\KLich.pdb
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\bin\Antlr3.Runtime.dll
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\bin\EntityFramework.dll
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\bin\EntityFramework.SqlServer.dll
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\bin\Microsoft.Web.Infrastructure.dll
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\bin\Newtonsoft.Json.dll
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\bin\PagedList.dll
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\bin\PagedList.Mvc.dll
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\bin\System.Web.Helpers.dll
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\bin\System.Web.Mvc.dll
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\bin\System.Web.Optimization.dll
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\bin\System.Web.Razor.dll
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\bin\System.Web.WebPages.Deployment.dll
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\bin\System.Web.WebPages.dll
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\bin\System.Web.WebPages.Razor.dll
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\bin\WebGrease.dll
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\bin\EntityFramework.xml
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\bin\EntityFramework.SqlServer.xml
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\bin\PagedList.xml
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\bin\PagedList.Mvc.xml
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\bin\System.Web.Helpers.xml
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\bin\System.Web.Mvc.xml
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\bin\System.Web.Optimization.xml
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\bin\System.Web.Razor.xml
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\bin\System.Web.WebPages.xml
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\bin\System.Web.WebPages.Deployment.xml
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\bin\System.Web.WebPages.Razor.xml
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\bin\Antlr3.Runtime.pdb
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\bin\Newtonsoft.Json.xml
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\obj\Debug\KLich.csproj.CoreCompileInputs.cache
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\obj\Debug\KLich.csproj.CopyComplete
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\obj\Debug\KLich.dll
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\obj\Debug\KLich.pdb
+D:\Dokumenty\Gra_mie\MVC-HomeBudget-master\App_event\C#\KLich\obj\Debug\KLich.csprojAssemblyReference.cache
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\obj\Debug\KLich.csproj.CoreCompileInputs.cache
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\bin\KLich.dll.config
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\bin\KLich.dll
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\bin\KLich.pdb
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\bin\Antlr3.Runtime.dll
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\bin\EntityFramework.dll
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\bin\EntityFramework.SqlServer.dll
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\bin\Microsoft.Web.Infrastructure.dll
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\bin\Newtonsoft.Json.dll
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\bin\PagedList.dll
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\bin\PagedList.Mvc.dll
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\bin\System.Web.Helpers.dll
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\bin\System.Web.Mvc.dll
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\bin\System.Web.Optimization.dll
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\bin\System.Web.Razor.dll
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\bin\System.Web.WebPages.Deployment.dll
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\bin\System.Web.WebPages.dll
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\bin\System.Web.WebPages.Razor.dll
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\bin\WebGrease.dll
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\bin\EntityFramework.xml
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\bin\EntityFramework.SqlServer.xml
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\bin\PagedList.xml
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\bin\PagedList.Mvc.xml
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\bin\System.Web.Helpers.xml
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\bin\System.Web.Mvc.xml
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\bin\System.Web.Optimization.xml
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\bin\System.Web.Razor.xml
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\bin\System.Web.WebPages.xml
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\bin\System.Web.WebPages.Deployment.xml
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\bin\System.Web.WebPages.Razor.xml
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\bin\Antlr3.Runtime.pdb
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\bin\Newtonsoft.Json.xml
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\obj\Debug\KLich.csproj.CopyComplete
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\obj\Debug\KLich.dll
+D:\Dokumenty\Gra_mie\C#\Nowy folder\Event_Web_app-main\KLich\obj\Debug\KLich.pdb
+C:\Users\rysio\source\repos\KLich\KLich\bin\KLich.dll.config
+C:\Users\rysio\source\repos\KLich\KLich\bin\KLich.dll
+C:\Users\rysio\source\repos\KLich\KLich\bin\KLich.pdb
+C:\Users\rysio\source\repos\KLich\KLich\bin\Antlr3.Runtime.dll
+C:\Users\rysio\source\repos\KLich\KLich\bin\EntityFramework.dll
+C:\Users\rysio\source\repos\KLich\KLich\bin\EntityFramework.SqlServer.dll
+C:\Users\rysio\source\repos\KLich\KLich\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\rysio\source\repos\KLich\KLich\bin\Newtonsoft.Json.dll
+C:\Users\rysio\source\repos\KLich\KLich\bin\PagedList.dll
+C:\Users\rysio\source\repos\KLich\KLich\bin\PagedList.Mvc.dll
+C:\Users\rysio\source\repos\KLich\KLich\bin\System.Web.Helpers.dll
+C:\Users\rysio\source\repos\KLich\KLich\bin\System.Web.Mvc.dll
+C:\Users\rysio\source\repos\KLich\KLich\bin\System.Web.Optimization.dll
+C:\Users\rysio\source\repos\KLich\KLich\bin\System.Web.Razor.dll
+C:\Users\rysio\source\repos\KLich\KLich\bin\System.Web.WebPages.Deployment.dll
+C:\Users\rysio\source\repos\KLich\KLich\bin\System.Web.WebPages.dll
+C:\Users\rysio\source\repos\KLich\KLich\bin\System.Web.WebPages.Razor.dll
+C:\Users\rysio\source\repos\KLich\KLich\bin\WebGrease.dll
+C:\Users\rysio\source\repos\KLich\KLich\bin\EntityFramework.xml
+C:\Users\rysio\source\repos\KLich\KLich\bin\EntityFramework.SqlServer.xml
+C:\Users\rysio\source\repos\KLich\KLich\bin\PagedList.xml
+C:\Users\rysio\source\repos\KLich\KLich\bin\PagedList.Mvc.xml
+C:\Users\rysio\source\repos\KLich\KLich\bin\System.Web.Helpers.xml
+C:\Users\rysio\source\repos\KLich\KLich\bin\System.Web.Mvc.xml
+C:\Users\rysio\source\repos\KLich\KLich\bin\System.Web.Optimization.xml
+C:\Users\rysio\source\repos\KLich\KLich\bin\System.Web.Razor.xml
+C:\Users\rysio\source\repos\KLich\KLich\bin\System.Web.WebPages.xml
+C:\Users\rysio\source\repos\KLich\KLich\bin\System.Web.WebPages.Deployment.xml
+C:\Users\rysio\source\repos\KLich\KLich\bin\System.Web.WebPages.Razor.xml
+C:\Users\rysio\source\repos\KLich\KLich\bin\Antlr3.Runtime.pdb
+C:\Users\rysio\source\repos\KLich\KLich\bin\Newtonsoft.Json.xml
+C:\Users\rysio\source\repos\KLich\KLich\obj\Debug\KLich.csprojAssemblyReference.cache
+C:\Users\rysio\source\repos\KLich\KLich\obj\Debug\KLich.csproj.CoreCompileInputs.cache
+C:\Users\rysio\source\repos\KLich\KLich\obj\Debug\KLich.csproj.CopyComplete
+C:\Users\rysio\source\repos\KLich\KLich\obj\Debug\KLich.dll
+C:\Users\rysio\source\repos\KLich\KLich\obj\Debug\KLich.pdb
