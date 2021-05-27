@@ -42,8 +42,6 @@ namespace KLich.Controllers
             }
 
 
-            // return View(db.Meets.ToList());
-            //return View(linqNrPart.ToList());
             return View(meetsList.ToList());
         }
 
@@ -55,7 +53,6 @@ namespace KLich.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            // Meet meet = db.Meets.Find(id);
             var meet_participant = db.Meet_participant.Include(m => m.Meet).Include(m => m.Participant);
     
 
@@ -84,9 +81,7 @@ namespace KLich.Controllers
             return View();
         }
 
-        // POST: Meets/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Meets/Create       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id_meet,Place,Descript,DateEvent")] Meet meet)
@@ -116,9 +111,7 @@ namespace KLich.Controllers
             return View(meet);
         }
 
-        // POST: Meets/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Meets/Edit/5      
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id_meet,Place,Descript,DateEvent")] Meet meet)
@@ -145,12 +138,8 @@ namespace KLich.Controllers
                 return HttpNotFound();
             }
 
-         //   Meet meetName = db.Meets.Find(meet_participant.Id_meet);
-
+       
             ViewBag.eventName = meet.Descript;
-
-
-
             return View(meet);
         }
 

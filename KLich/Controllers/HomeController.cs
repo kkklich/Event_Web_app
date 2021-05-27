@@ -6,12 +6,10 @@ using System.Web.Mvc;
 using KLich;
 
 
-
 namespace KLich.Controllers
 {
     public class HomeController : Controller
-    {
-        
+    {       
 
         public ActionResult Index()
         {
@@ -20,17 +18,7 @@ namespace KLich.Controllers
 
         public ActionResult About()
         {
-            // Commenting out LINQ to show how to do the same thing in SQL.
-            //IQueryable<EnrollmentDateGroup> = from student in db.Students
-            //           group student by student.EnrollmentDate into dateGroup
-            //           select new EnrollmentDateGroup()
-            //           {
-            //               EnrollmentDate = dateGroup.Key,
-            //               StudentCount = dateGroup.Count()
-            //           };
-
-            // SQL version of the above LINQ code.
-           
+                      
             return View();
         }
         public ActionResult Contact()
@@ -41,8 +29,7 @@ namespace KLich.Controllers
         }
 
         protected override void Dispose(bool disposing)
-        {
-         
+        {         
             base.Dispose(disposing);
         }
     }
