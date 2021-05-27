@@ -1,0 +1,47 @@
+﻿@model KLich.Meet_participant
+
+@{
+    ViewBag.Title = "Usuń";
+}
+
+<h2>Usuń</h2>
+
+<h3>Czy chcesz usunąć tego uczestnika z wydarzenia</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <p>Wydarzenie</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Meet.Descript)
+        </dd>
+
+        <dt>
+            <p>Imie</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Participant.FirstName)
+        </dd>
+
+        <dt>
+            <p>Nazwisko</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Participant.SureName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+<div class="form-actions no-color">
+    <input type="submit" value="Usuń" class="btn btn-default" /> <br />
+    
+</div>
+    }
+</div>

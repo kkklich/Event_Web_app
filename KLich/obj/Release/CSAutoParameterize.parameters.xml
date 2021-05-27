@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="MeetingsEntities-Web.config Connection String" description="MeetingsEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/ModelMeet1.csdl|res://*/ModelMeet1.ssdl|res://*/ModelMeet1.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=sql5097.site4now.net;initial catalog=db_a751a7_rysiek1234;user id=db_a751a7_rysiek1234_admin;password=Krzysztof123;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\Dokumenty\\Gra_mie\\KLich\\KLich\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MeetingsEntities']/@connectionString" />
+  </parameter>
+</parameters>

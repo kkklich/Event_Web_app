@@ -188,6 +188,7 @@
     <Content Include="ModelMeet1.edmx.diagram">
       <DependentUpon>ModelMeet1.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -211,25 +212,15 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Meet_participant\Create.cshtml" />
     <Content Include="Views\Meet_participant\Delete.cshtml" />
-    <Content Include="Views\Meet_participant\Details.cshtml" />
-    <Content Include="Views\Meet_participant\Edit.cshtml" />
-    <Content Include="Views\Meet_participant\Index.cshtml" />
     <Content Include="Views\Meets\Create.cshtml" />
     <Content Include="Views\Meets\Delete.cshtml" />
     <Content Include="Views\Meets\Details.cshtml" />
     <Content Include="Views\Meets\Edit.cshtml" />
     <Content Include="Views\Meets\Index.cshtml" />
-    <Content Include="Views\Participants\Create.cshtml" />
-    <Content Include="Views\Participants\Delete.cshtml" />
-    <Content Include="Views\Participants\Details.cshtml" />
-    <Content Include="Views\Participants\Edit.cshtml" />
-    <Content Include="Views\Participants\Index.cshtml" />
     <Content Include="Views\Meet_participant\Add_Participant_Meet.cshtml" />
     <Content Include="Views\Meet_participant\ViewAdd.cshtml" />
   </ItemGroup>

@@ -1,0 +1,55 @@
+﻿@model KLich.Meet
+
+@{
+    ViewBag.Title = "Usuń";
+}
+
+<h2>Usuń</h2>
+
+<h3>Czy chcesz usunąć to wydarzenie?</h3>
+<div>
+    <h4>@ViewBag.eventName</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <p>Miejsce</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Place)
+        </dd>
+        <dt>
+            <p>Nazwa wydarzenia</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descript)
+        </dd>
+
+        <dt>
+            <p>Data</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateEvent)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+@Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Usuń" class="btn btn-default" /> <br />
+
+
+    </div>
+    <br/>
+    <a class="btn btn-default"  @Html.ActionLink("Powrót do listy", "Index","Meets")
+               
+
+                                <div><p>@ViewBag.info</p></div>
+                                
+                         }
+</div>

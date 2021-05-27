@@ -1,0 +1,52 @@
+﻿
+@model IEnumerable<KLich.Meet_participant>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@ViewBag.EventName</h2>
+
+<p>
+    Liczba uczestników: 
+    @ViewBag.count
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <p>Miejsce</p>
+        </th>
+        <th>
+            <p>Imie</p>
+        </th>
+        <th>
+            <p>Nazwisko</p>
+        </th>
+        <th>
+            <p>Email</p>
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Meet.Place)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Participant.FirstName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Participant.SureName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Participant.Email)
+    </td>
+    <td>
+        @Html.ActionLink("Usuń", "Delete","Meet_participant", new { id = item.id_Meet_participant },new { })
+    </td>
+</tr>
+    }
+
+</table>

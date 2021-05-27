@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "APP Event";
+}
+
+<div class="jumbotron">
+    <h1>Event App</h1>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <h2>Lista wydarzeń</h2>
+        <p>Zobacz wydarzenia</p><br/>
+        <p><a class="btn btn-default" @Html.ActionLink("Lista", "Index", "Meets")</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Utwórz wydarzenie</h2>
+        <p>Tworzenie wydarzenia</p>
+        <h2></h2>
+        <p><a class="btn btn-default" @Html.ActionLink("Utwórz", "Create", "Meets")</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Dodaj nowe osoby do wydarzenia</h2>
+        <p>Dodaj niezarejestrowanych uczestników do wydarzenia</p>
+        <h2></h2>
+        <p><a class="btn btn-default" @Html.ActionLink("Dodaj", "ViewAdd", "Meet_participant")</a></p>
+    </div>
+   
+
+</div>

@@ -104,22 +104,15 @@ namespace KLich.Controllers
             {
                 ViewBag.info = "Zbyt dużo uczestników w wydarzeniu: "+meetCount.ToString();
                 return View(); 
-               // return RedirectToAction("Add_Participant_Meet", new RouteValueDictionary(
-                    // new { controller = "Meet_participant", action = "Add_Participant_Meet", id = int_id_meet }));
             }
-
-
-
             return RedirectToAction("Details", new RouteValueDictionary(
-                      new { controller = "Meets", action = "Main", id = int_id_meet }));
-           // return View();
+                      new { controller = "Meets", action = "Main", id = int_id_meet }));           
         }
 
 
-
+        //Dodawanie uczestnika i wybieranie z listy wydarzenia
         public ActionResult ViewAdd()
         {
-
             ViewBag.Id_meet = new SelectList(db.Meets, "Id_meet", "Descript");
 
             ViewBag.Id_participant = new SelectList(db.Participants, "Id_participant", "FirstName");
@@ -133,7 +126,7 @@ namespace KLich.Controllers
             ViewBag.Id_meet = new SelectList(db.Meets, "Id_meet", "Descript");
             ViewBag.Id_participant = new SelectList(db.Participants, "Id_participant", "FirstName");
          
-            //Oblicanie ile jest 
+            //Obliczanie ile jest 
             var linqCount = from x in db.Meet_participant
                             where x.Id_meet == meet_participant.Id_meet
                             select x;
@@ -151,7 +144,7 @@ namespace KLich.Controllers
                     participant1.Email = email;
 
                     db.Participants.Add(participant1);
-                    //db.SaveChanges();
+                    
                     ViewBag.Id_participant = participant1.Id_participant.ToString();
 
 
@@ -162,7 +155,6 @@ namespace KLich.Controllers
 
                     db.Meet_participant.Add(meet_Participant1);
                     db.SaveChanges();
-
 
                     ViewBag.info = "Zapisano uczestnika " + participant1.FirstName;
 
@@ -177,12 +169,6 @@ namespace KLich.Controllers
             {
                 ViewBag.info = "Zbyt dużo uczestników w wydarzeniu";
             }
-
-           // ViewBag.count = "Liczba osób: " + meetCount.ToString();
-            ViewBag.imie = firstName;
-            ViewBag.nazwisko = sureName;
-            ViewBag.email = email;
-            ViewBag.idmeet = meet_participant.Id_meet;
 
             return View();
         }
@@ -204,8 +190,6 @@ namespace KLich.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "id_Meet_participant,Id_participant,Id_meet")] Meet_participant meet_participant)
         {
-
-          
 
 
             ViewBag.Id_meet = new SelectList(db.Meets, "Id_meet", "Descript", meet_participant.Id_meet);

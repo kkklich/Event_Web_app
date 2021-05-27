@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MeetingsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Meet">
+    <Key>
+      <PropertyRef Name="Id_meet" />
+    </Key>
+    <Property Name="Id_meet" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Place" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Descript" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DateEvent" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Meet_participant" Relationship="Self.FK__Meet_part__Id_me__5535A963" FromRole="Meet" ToRole="Meet_participant" />
+  </EntityType>
+  <EntityType Name="Meet_participant">
+    <Key>
+      <PropertyRef Name="id_Meet_participant" />
+    </Key>
+    <Property Name="id_Meet_participant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_participant" Type="Int32" Nullable="false" />
+    <Property Name="Id_meet" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Meet" Relationship="Self.FK__Meet_part__Id_me__5535A963" FromRole="Meet_participant" ToRole="Meet" />
+    <NavigationProperty Name="Participant" Relationship="Self.FK__Meet_part__Id_pa__5441852A" FromRole="Meet_participant" ToRole="Participant" />
+  </EntityType>
+  <EntityType Name="Participant">
+    <Key>
+      <PropertyRef Name="Id_participant" />
+    </Key>
+    <Property Name="Id_participant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SureName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Meet_participant" Relationship="Self.FK__Meet_part__Id_pa__5441852A" FromRole="Participant" ToRole="Meet_participant" />
+  </EntityType>
+  <Association Name="FK__Meet_part__Id_me__5535A963">
+    <End Role="Meet" Type="Self.Meet" Multiplicity="1" />
+    <End Role="Meet_participant" Type="Self.Meet_participant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Meet">
+        <PropertyRef Name="Id_meet" />
+      </Principal>
+      <Dependent Role="Meet_participant">
+        <PropertyRef Name="Id_meet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Meet_part__Id_pa__5441852A">
+    <End Role="Participant" Type="Self.Participant" Multiplicity="1" />
+    <End Role="Meet_participant" Type="Self.Meet_participant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Participant">
+        <PropertyRef Name="Id_participant" />
+      </Principal>
+      <Dependent Role="Meet_participant">
+        <PropertyRef Name="Id_participant" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MeetingsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Meets" EntityType="Self.Meet" />
+    <EntitySet Name="Meet_participant" EntityType="Self.Meet_participant" />
+    <EntitySet Name="Participants" EntityType="Self.Participant" />
+    <AssociationSet Name="FK__Meet_part__Id_me__5535A963" Association="Self.FK__Meet_part__Id_me__5535A963">
+      <End Role="Meet" EntitySet="Meets" />
+      <End Role="Meet_participant" EntitySet="Meet_participant" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Meet_part__Id_pa__5441852A" Association="Self.FK__Meet_part__Id_pa__5441852A">
+      <End Role="Participant" EntitySet="Participants" />
+      <End Role="Meet_participant" EntitySet="Meet_participant" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
