@@ -14,14 +14,17 @@ namespace KLich
 
 using System;
     using System.Collections.Generic;
-    
-public partial class Meet_participant
+    using System.ComponentModel.DataAnnotations;
+
+    public partial class Meet_participant
 {
 
     public int id_Meet_participant { get; set; }
 
+    [Required]
     public int Id_participant { get; set; }
 
+    [Required]
     public int Id_meet { get; set; }
 
 

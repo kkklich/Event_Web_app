@@ -5,10 +5,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>@ViewBag.EventName</h2>
 
 <p>
-    Ilość uczestników: 
+    Liczba uczestników: 
     @ViewBag.count
 </p>
 <table class="table">
@@ -44,8 +44,7 @@
         @Html.DisplayFor(modelItem => item.Participant.Email)
     </td>
     <td>
-        @Html.ActionLink("Edytuj", "Edit", new { id = item.id_Meet_participant }) |
-        @Html.ActionLink("Usuń", "Delete", new { id = item.id_Meet_participant })
+        @Html.ActionLink("Usuń", "Delete","Meet_participant", new { id = item.id_Meet_participant },new { })
     </td>
 </tr>
     }

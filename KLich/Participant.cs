@@ -14,9 +14,10 @@ namespace KLich
 
 using System;
     using System.Collections.Generic;
-    
-public partial class Participant
-{
+    using System.ComponentModel.DataAnnotations;
+
+ public partial class Participant
+ {
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
     public Participant()
@@ -29,10 +30,18 @@ public partial class Participant
 
     public int Id_participant { get; set; }
 
+
+    [Required]
+    [StringLength(100)]
     public string FirstName { get; set; }
 
+    
+    [StringLength(100)]
     public string SureName { get; set; }
 
+    [Required]
+    [StringLength(50)]
+    [EmailAddress]
     public string Email { get; set; }
 
 

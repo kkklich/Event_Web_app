@@ -230,6 +230,8 @@
     <Content Include="Views\Participants\Details.cshtml" />
     <Content Include="Views\Participants\Edit.cshtml" />
     <Content Include="Views\Participants\Index.cshtml" />
+    <Content Include="Views\Meet_participant\Add_Participant_Meet.cshtml" />
+    <Content Include="Views\Meet_participant\ViewAdd.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

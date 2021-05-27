@@ -8,22 +8,30 @@
 <div class="row">
     <div class="col-md-4">
         <h2>Lista wydarzeń</h2>
-        <p>Zobacz wydarzenia</p>
+        <p>Zobacz wydarzenia</p><br/>
         <p><a class="btn btn-default" @Html.ActionLink("Lista", "Index", "Meets")</a></p>
     </div>
     <div class="col-md-4">
         <h2>Utwórz wydarzenie</h2>
         <p>Tworzenie wydarzenia</p>
+        <h2></h2>
         <p><a class="btn btn-default" @Html.ActionLink("Utwórz", "Create", "Meets")</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Dodaj nowego uczestnika</h2>
-        <p>Dodaj nowych uczestników</p>
+        <h2>Dodaj nowe osoby do wydarzenia</h2>
+        <p>Dodaj niezarejestrowanych uczestników do wydarzenia</p>
+        <h2></h2>
+        <p><a class="btn btn-default" @Html.ActionLink("Dodaj", "ViewAdd", "Meet_participant")</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Rejestracja uczestnika</h2>
+        <p>Dodaj nowego uczestnika do bazy danych bez zapisywania go do wydarzenia</p>
         <p><a class="btn btn-default" @Html.ActionLink("Dodaj", "Create", "Participants")</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Dodaj osoby do wydarzenia</h2>
-        <p>Dodaj uczestnika do wydarzenia</p>
+        <h2>Dodaj istniejące osoby do wydarzenia</h2>
+        <p>Dodaj zarejestrowanego uczestnika do istniejącego wydarzenia</p>
         <p><a class="btn btn-default" @Html.ActionLink("Dodaj", "Create", "Meet_participant")</a></p>
     </div>
+
 </div>

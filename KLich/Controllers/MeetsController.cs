@@ -17,7 +17,34 @@ namespace KLich.Controllers
         // GET: Meets
         public ActionResult Index()
         {
-            return View(db.Meets.ToList());
+
+            var meet_participant = db.Meet_participant.Include(m => m.Meet).Include(m => m.Participant);
+
+            var linqNrPart = meet_participant.GroupBy(plac => plac.Meet.Descript)
+                             .Select(plac => new
+                             {
+                                 Descript = plac.Key,
+                                 NumberOfParticipant = plac.Count()
+                             }).OrderBy(plac => plac.NumberOfParticipant);
+
+            var meetsList = db.Meets;
+
+            foreach(var item in meetsList)
+            {
+                
+                var linqMeet_PArt = from x in meet_participant
+                                    where x.Meet.Id_meet == item.Id_meet
+                                    select x;
+
+                int CountParticipant = linqMeet_PArt.Count();
+                item.NumberOfParticipant = CountParticipant;
+
+            }
+
+
+            // return View(db.Meets.ToList());
+            //return View(linqNrPart.ToList());
+            return View(meetsList.ToList());
         }
 
         // GET: Meets/Details/5
@@ -45,6 +72,9 @@ namespace KLich.Controllers
             {
                 return HttpNotFound();
             }
+            Meet meetName = db.Meets.Find(id);
+            ViewBag.EventName = meetName.Descript;
+
             return View(linqMeet_PArt);
         }
 
@@ -114,6 +144,13 @@ namespace KLich.Controllers
             {
                 return HttpNotFound();
             }
+
+         //   Meet meetName = db.Meets.Find(meet_participant.Id_meet);
+
+            ViewBag.eventName = meet.Descript;
+
+
+
             return View(meet);
         }
 
@@ -122,10 +159,25 @@ namespace KLich.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Meet meet = db.Meets.Find(id);
-            db.Meets.Remove(meet);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                Meet meet = db.Meets.Find(id);
+                db.Meets.Remove(meet);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }catch(Exception f)
+            {
+                ViewBag.info = "BŁĄD nie można usunąć wydarzenia";
+
+                
+                Meet meet = db.Meets.Find(id);
+                if (meet == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(meet);
+            }
+            
         }
 
         protected override void Dispose(bool disposing)

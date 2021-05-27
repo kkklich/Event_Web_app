@@ -12,10 +12,11 @@
 namespace KLich
 {
 
-using System;
+    using System;
     using System.Collections.Generic;
-    
-public partial class Meet
+    using System.ComponentModel.DataAnnotations;
+
+    public partial class Meet
 {
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -29,12 +30,18 @@ public partial class Meet
 
     public int Id_meet { get; set; }
 
+    [StringLength(100)]
     public string Place { get; set; }
 
-    public string Descript { get; set; }
+     [StringLength(100)]
+     public string Descript { get; set; }
 
+    [DataType(DataType.Date)]
+    [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
     public Nullable<System.DateTime> DateEvent { get; set; }
 
+
+    public int NumberOfParticipant { get; set; }
 
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 using KLich;
 
 
@@ -34,8 +35,158 @@ namespace KLich.Controllers
             {
                 return HttpNotFound();
             }
+            
+
+           
             return View(meet_participant);
         }
+
+
+
+
+        public ActionResult Add_Participant_Meet(int id)
+        {
+            ViewBag.Id_meet = new SelectList(db.Meets, "Id_meet", "Descript");
+            ViewBag.Id_participant = new SelectList(db.Participants, "Id_participant", "FirstName");
+
+            var eventName = db.Meets.Find(id);
+            ViewBag.EventName = eventName.Descript;
+            ViewBag.EventID = eventName.Id_meet;
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult Add_Participant_Meet([Bind(Include = "Id_participant,FirstName,SureName,Email")] Participant participant, string id_meet)
+        {
+            int int_id_meet = int.Parse(id_meet);
+            var eventName = db.Meets.Find(int_id_meet);
+            ViewBag.EventName = eventName.Descript;
+
+            ViewBag.Id_meet = new SelectList(db.Meets, "Id_meet", "Descript");
+            ViewBag.Id_participant = new SelectList(db.Participants, "Id_participant", "FirstName");
+
+            
+            //Oblicanie ile jest 
+            var linqCount = from x in db.Meet_participant
+                            where x.Id_meet == int_id_meet
+                            select x;
+
+            int meetCount = linqCount.Count();
+
+            if (meetCount < 20)
+            {
+                try
+                {
+                    //Dodawanie użytkownika do bazy danych                      
+                    db.Participants.Add(participant);
+                    //db.SaveChanges();
+
+
+                    //Dodawanie stworzonego przed chwilą użytkownika do istniejącego już wcześniej wydarzenia
+                    Meet_participant meet_Participant1 = new Meet_participant();
+                    meet_Participant1.Id_participant = participant.Id_participant;
+                    meet_Participant1.Id_meet = int_id_meet;
+
+                    db.Meet_participant.Add(meet_Participant1);
+                    db.SaveChanges();
+
+                    ViewBag.info = "Zapisano uczestnika " + participant.FirstName;
+                }
+                catch (Exception)
+                {
+                    ViewBag.info = "Błąd";
+                    return View();
+                }
+
+            }
+            else
+            {
+                ViewBag.info = "Zbyt dużo uczestników w wydarzeniu: "+meetCount.ToString();
+                return View(); 
+               // return RedirectToAction("Add_Participant_Meet", new RouteValueDictionary(
+                    // new { controller = "Meet_participant", action = "Add_Participant_Meet", id = int_id_meet }));
+            }
+
+
+
+            return RedirectToAction("Details", new RouteValueDictionary(
+                      new { controller = "Meets", action = "Main", id = int_id_meet }));
+           // return View();
+        }
+
+
+
+        public ActionResult ViewAdd()
+        {
+
+            ViewBag.Id_meet = new SelectList(db.Meets, "Id_meet", "Descript");
+
+            ViewBag.Id_participant = new SelectList(db.Participants, "Id_participant", "FirstName");
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ViewAdd(string firstName, string sureName, string email, [Bind(Include = "id_Meet_participant,Id_meet")] Meet_participant meet_participant)
+        {
+
+            ViewBag.Id_meet = new SelectList(db.Meets, "Id_meet", "Descript");
+            ViewBag.Id_participant = new SelectList(db.Participants, "Id_participant", "FirstName");
+         
+            //Oblicanie ile jest 
+            var linqCount = from x in db.Meet_participant
+                            where x.Id_meet == meet_participant.Id_meet
+                            select x;
+
+            int meetCount = linqCount.Count();
+
+            if (meetCount < 20 & firstName!=null & email!=null & meet_participant.Id_meet.ToString()!=null)
+            {
+                try
+                {
+                    //Dodawanie użytkownika do bazy danych
+                    Participant participant1 = new Participant();
+                    participant1.FirstName = firstName;
+                    participant1.SureName = sureName;
+                    participant1.Email = email;
+
+                    db.Participants.Add(participant1);
+                    //db.SaveChanges();
+                    ViewBag.Id_participant = participant1.Id_participant.ToString();
+
+
+                    //Dodawanie stworzonego przed chwilą użytkownika do istniejącego już wcześniej wydarzenia
+                    Meet_participant meet_Participant1 = new Meet_participant();
+                    meet_Participant1.Id_participant = participant1.Id_participant;
+                    meet_Participant1.Id_meet = meet_participant.Id_meet;
+
+                    db.Meet_participant.Add(meet_Participant1);
+                    db.SaveChanges();
+
+
+                    ViewBag.info = "Zapisano uczestnika " + participant1.FirstName;
+
+                }
+                catch(Exception )
+                {
+                    ViewBag.info = "Błąd";
+                    return View();
+                }
+
+            }else
+            {
+                ViewBag.info = "Zbyt dużo uczestników w wydarzeniu";
+            }
+
+           // ViewBag.count = "Liczba osób: " + meetCount.ToString();
+            ViewBag.imie = firstName;
+            ViewBag.nazwisko = sureName;
+            ViewBag.email = email;
+            ViewBag.idmeet = meet_participant.Id_meet;
+
+            return View();
+        }
+
 
         // GET: Meet_participant/Create
         public ActionResult Create()
@@ -45,6 +196,7 @@ namespace KLich.Controllers
             return View();
         }
 
+
         // POST: Meet_participant/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -52,16 +204,44 @@ namespace KLich.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "id_Meet_participant,Id_participant,Id_meet")] Meet_participant meet_participant)
         {
+
+          
+
+
+            ViewBag.Id_meet = new SelectList(db.Meets, "Id_meet", "Descript", meet_participant.Id_meet);
+            ViewBag.Id_participant = new SelectList(db.Participants, "Id_participant", "FirstName", meet_participant.Id_participant);
+
             if (ModelState.IsValid)
-            {
-                db.Meet_participant.Add(meet_participant);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+            {              
+
+                var linqMeet_Count = from x in db.Meet_participant
+                                     where x.Meet.Id_meet == meet_participant.Id_meet
+                                     select x;
+
+                int countMeet = linqMeet_Count.Count();
+
+                if (countMeet < 20)
+                {
+                    db.Meet_participant.Add(meet_participant);
+                    db.SaveChanges();
+                    ViewBag.info = "Zapisano do bazy ";
+
+                }else
+                {
+                    ViewBag.info = "Za dużo uczestników ";
+                }
+
+                ViewBag.count =" liczba uczestników: "+countMeet.ToString();
+
+
+
+                return View();
+                //return RedirectToAction("Index");
             }
 
-            ViewBag.Id_meet = new SelectList(db.Meets, "Id_meet", "Place", meet_participant.Id_meet);
-            ViewBag.Id_participant = new SelectList(db.Participants, "Id_participant", "FirstName", meet_participant.Id_participant);
-            return View(meet_participant);
+            
+            return View();
+            //return View(meet_participant);
         }
 
         // GET: Meet_participant/Edit/5
@@ -111,6 +291,7 @@ namespace KLich.Controllers
             {
                 return HttpNotFound();
             }
+           
             return View(meet_participant);
         }
 
@@ -122,7 +303,11 @@ namespace KLich.Controllers
             Meet_participant meet_participant = db.Meet_participant.Find(id);
             db.Meet_participant.Remove(meet_participant);
             db.SaveChanges();
-            return RedirectToAction("Index");
+           // return RedirectToAction("Details","Meets", new { id = 5 });
+
+            return RedirectToAction("Details", new RouteValueDictionary(
+                      new { controller = "Meets", action = "Main", id = meet_participant.Id_meet }));
+
         }
 
         protected override void Dispose(bool disposing)

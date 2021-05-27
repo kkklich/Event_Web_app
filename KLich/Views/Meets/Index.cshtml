@@ -10,13 +10,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Place)
+            <a>Miejsce</a>            
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Descript)
+            <a>Nazwa wydarzenia</a>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DateEvent)
+            <a>Data</a>
         </th>
         <th>
             <a>Liczba uczestników</a>
@@ -37,10 +37,11 @@
         @Html.DisplayFor(modelItem => item.DateEvent)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.DateEvent)
+        @Html.DisplayFor(modelItem => item.NumberOfParticipant)
     </td>
     
     <td>
+        @Html.ActionLink("Dodaj", "Add_Participant_Meet","Meet_participant", new { id = item.Id_meet },new { }) |
         @Html.ActionLink("Edytuj", "Edit", new { id = item.Id_meet }) |
         @Html.ActionLink("Wyświetl uczestników", "Details", new { id = item.Id_meet }) |
         @Html.ActionLink("Usuń", "Delete", new { id = item.Id_meet })
