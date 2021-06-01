@@ -12,4 +12,5 @@ Jest tutaj również opcja doawania nowych uczestników, przeglądania uczestnik
 ![List page](https://github.com/kkklich/Event_Web_app/blob/main/Pic/Obraz2.png)
 
 Dodawania uczestników do bazy dancyh oraz przypisywanie ich do wydarzenia
+
 ![Add page](https://github.com/kkklich/Event_Web_app/blob/main/Pic/Obraz3.png)
